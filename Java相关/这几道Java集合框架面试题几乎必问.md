@@ -158,7 +158,7 @@ Node: 链表节点）：
 
 首先将数据分为一段一段的存储，然后给每一段数据配一把锁，当一个线程占用锁访问其中一个段数据时，其他段的数据也能被其他线程访问。
 
-**ConcurrentHashMap 是由 Segment 数组结构和 HahEntry 数组结构组成**。
+**ConcurrentHashMap 是由 Segment 数组结构和 HashEntry 数组结构组成**。
 
 Segment 实现了 ReentrantLock,所以 Segment 是一种可重入锁，扮演锁的角色。HashEntry 用于存储键值对数据。
 
@@ -187,7 +187,7 @@ synchronized只锁定当前链表或红黑二叉树的首节点，这样只要ha
 
 ####  2. Set
   - **HashSet（无序，唯一）:**  基于 HashMap 实现的，底层采用 HashMap 来保存元素
-  - **LinkedHashSet：** LinkedHashSet 继承与 HashSet，并且其内部是通过 LinkedHashMap 来实现的。有点类似于我们之前说的LinkedHashMap 其内部是基于 Hashmap 实现一样，不过还是有一点点区别的。
+  - **LinkedHashSet：** LinkedHashSet 继承与 HashSet，并且其内部是通过 LinkedHashMap 来实现的。有点类似于我们之前说的 HashSet 其内部是基于 Hashmap 实现一样，不过还是有一点点区别的。
   - **TreeSet（有序，唯一）：** 红黑树(自平衡的排序二叉树。)
 
 ###  Map 
